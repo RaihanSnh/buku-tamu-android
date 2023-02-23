@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="Admin"
+        android:text="Tamu"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/white"/>
 
@@ -31,6 +31,6 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gedung A"
+        android:text="SMKN 1 Cimahi"
         android:textColor="@color/white"/>
 </LinearLayout>

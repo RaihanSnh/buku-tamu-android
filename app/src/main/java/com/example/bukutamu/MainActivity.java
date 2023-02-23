@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.example.bukutamu.ui.dashboard.DashboardViewModel;
+import com.example.bukutamu.ui.logout.LogoutViewModel;
 import com.example.bukutamu.ui.tamu.TamuViewModel;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -56,10 +58,31 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                return onNavigationItemSelected(item);
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                switch (id) {
+                    case R.id.nav_dashboard:
+                        Intent dashboardintent = new Intent(MainActivity.this, DashboardViewModel.class);
+                        dashboardintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(dashboardintent);
+                        break;
+                    case R.id.nav_tamu:
+                        Intent tamuintent = new Intent(MainActivity.this, TamuViewModel.class);
+                        tamuintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tamuintent);
+                        break;
+                    case R.id.nav_logout:
+                        Intent logoutintent = new Intent(MainActivity.this, LogoutViewModel.class);
+                        logoutintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(logoutintent);
+                        break;
+                }
+
+                return true;
             }
         });
+
     }
 
     @Override
