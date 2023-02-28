@@ -1,4 +1,4 @@
-package com.example.bukutamu.ui.logout;
+package com.example.bukutamu.ui.admin;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,23 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.bukutamu.databinding.FragmentLogoutBinding;
+import com.example.bukutamu.databinding.FragmentAdminBinding;
 
-public class LogoutFragment extends Fragment {
 
-    private FragmentLogoutBinding binding;
+public class AdminFragment extends Fragment {
+
+    private FragmentAdminBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        LogoutViewModel logoutViewModel =
-                new ViewModelProvider(this).get(LogoutViewModel.class);
+        AdminViewModel adminViewModel =
+                new ViewModelProvider(this).get(AdminViewModel.class);
 
-        binding = FragmentLogoutBinding.inflate(inflater, container, false);
+        binding = FragmentAdminBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textLogout;
-        logoutViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textAdmin;
+        adminViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

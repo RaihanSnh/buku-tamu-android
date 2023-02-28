@@ -13,8 +13,8 @@
             android:icon="@drawable/ic_baseline_group_add_24"
             android:title="Tambah Tamu" />
         <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/ic_baseline_exit_to_app_24"
-            android:title="Logout" />
+            android:id="@+id/nav_admin"
+            android:icon="@drawable/ic_baseline_admin_panel_settings_24"
+            android:title="Admin" />
     </group>
 </menu>

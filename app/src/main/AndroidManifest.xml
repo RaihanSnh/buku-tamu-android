@@ -12,6 +12,7 @@
         android:roundIcon="@drawable/buku_tamu"
         android:supportsRtl="true"
         android:theme="@style/Theme.BukuTamu"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".SplashActivity"
@@ -25,29 +26,9 @@
         </activity>
         <activity android:name=".MainActivity"
             android:theme="@style/Theme.BukuTamu.NoActionBar"/>
-        <activity android:name=".ui.dashboard.DashboardActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.DASHBOARD" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- Define activity for TamuActivity -->
-        <activity android:name=".ui.tamu.TamuActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.TAMU" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- Define activity for LogoutActivity -->
-        <activity android:name=".ui.logout.LogoutActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.LOGOUT" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

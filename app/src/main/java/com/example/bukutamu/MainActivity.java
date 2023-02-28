@@ -1,20 +1,10 @@
 package com.example.bukutamu;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
-import android.widget.Toast;
 
-import com.example.bukutamu.ui.dashboard.DashboardViewModel;
-import com.example.bukutamu.ui.logout.LogoutViewModel;
-import com.example.bukutamu.ui.tamu.TamuViewModel;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.annotation.NonNull;
-import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -37,51 +27,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_dashboard, R.id.nav_tamu, R.id.nav_logout)
+                R.id.nav_dashboard, R.id.nav_tamu, R.id.nav_admin)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-
-                switch (id) {
-                    case R.id.nav_dashboard:
-                        Intent dashboardintent = new Intent(MainActivity.this, DashboardViewModel.class);
-                        dashboardintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(dashboardintent);
-                        break;
-                    case R.id.nav_tamu:
-                        Intent tamuintent = new Intent(MainActivity.this, TamuViewModel.class);
-                        tamuintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(tamuintent);
-                        break;
-                    case R.id.nav_logout:
-                        Intent logoutintent = new Intent(MainActivity.this, LogoutViewModel.class);
-                        logoutintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(logoutintent);
-                        break;
-                }
-
-                return true;
-            }
-        });
 
     }
 

@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.BukuTamu" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="Theme.BukuTamu" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/old_blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
