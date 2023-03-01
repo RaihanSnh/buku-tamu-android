@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboardadmin">
+
+    <fragment
+        android:id="@+id/nav_dashboardadmin"
+        android:name="com.example.bukutamu.ui.dashboardadmin.DashboardAdminFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboardadmin" />
+
+    <fragment
+        android:id="@+id/nav_listtamu"
+        android:name="com.example.bukutamu.ui.listtamu.ListTamuFragment"
+        android:label="ListTamu"
+        tools:layout="@layout/fragment_listtamu" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.bukutamu.ui.logout.LogoutFragment"
+        android:label="logout"
+        tools:layout="@layout/fragment_logout" />
+</navigation>

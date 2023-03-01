@@ -28,20 +28,15 @@ import java.util.Locale;
 
 
 public class TamuFragment extends Fragment {
-    private EditText editTextNama, editTextHp, editTextAlamat, editTextKeperluan;
-    Button submit;
+    private EditText etNama, etAlamat, etHp, etKeperluan;
+    private Button submit;
 
     private FragmentTamuBinding binding;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_tamu, container, false);
-        editTextNama = rootView.findViewById(R.id.eTnama);
-        editTextHp = rootView.findViewById(R.id.eThp);
-        editTextAlamat = rootView.findViewById(R.id.eTalamat);
-        editTextKeperluan = rootView.findViewById(R.id.eTkeperluan);
-
 
         TamuViewModel tamuViewModel =
                 new ViewModelProvider(this).get(TamuViewModel.class);
@@ -52,43 +47,48 @@ public class TamuFragment extends Fragment {
         final TextView textView = binding.textTamu;
         tamuViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+        EditText etNama = (EditText) root.findViewById(R.id.eTnama);
+        EditText etAlamat = (EditText) root.findViewById(R.id.eTalamat);
+        EditText etHp = (EditText) root.findViewById(R.id.eThp);
+        EditText etKeperluan = (EditText) root.findViewById(R.id.eTkeperluan);
+        Button submit = (Button) root.findViewById(R.id.submitform);
 
-        submit = root.findViewById(R.id.submitform);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String nama = editTextNama.getText().toString().trim();
-                final String hp = editTextHp.getText().toString().trim();
-                final String alamat = editTextAlamat.getText().toString().trim();
-                final String keperluan = editTextKeperluan.getText().toString().trim();
+                final String nama = etNama.getText().toString().trim();
+                final String alamat = etAlamat.getText().toString().trim();
+                final String hp = etHp.getText().toString().trim();
+                final String keperluan = etKeperluan.getText().toString().trim();
+                final String lainnya = "Belum Diterima";
 
-
-                class AddTamu extends AsyncTask<Void, Void, String> {
+                class TambahData extends AsyncTask<Void, Void, String> {
 
                     ProgressDialog loading;
 
                     @Override
                     protected void onPreExecute() {
                         super.onPreExecute();
-                        loading = ProgressDialog.show(getActivity(),
+                        loading = ProgressDialog.show(getContext(),
                                 "Menambahkan...", "Tunggu...", false, false);
-
                     }
 
                     @Override
                     protected void onPostExecute(String s) {
                         super.onPostExecute(s);
                         loading.dismiss();
-                        Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
                     }
+
 
                     @Override
                     protected String doInBackground(Void... v) {
                         HashMap<String, String> params = new HashMap<>();
                         params.put(Konfigurasi.KEY_NAMA, nama);
-                        params.put(Konfigurasi.KEY_HP, hp);
                         params.put(Konfigurasi.KEY_ALAMAT, alamat);
+                        params.put(Konfigurasi.KEY_HP, hp);
                         params.put(Konfigurasi.KEY_KEPERLUAN, keperluan);
+                        params.put(Konfigurasi.KEY_LAINNYA, lainnya);
 
                         RequestHandler rh = new RequestHandler();
                         String res = rh.sendPostRequest(Konfigurasi.URL_ADD, params);
@@ -96,12 +96,12 @@ public class TamuFragment extends Fragment {
                     }
                 }
 
-                AddTamu ae = new AddTamu();
-                ae.execute();
+                TambahData td = new TambahData();
+                td.execute();
+
             }
         });
-        return root;
-    }
+    return root;}
     @Override
     public void onDestroyView() {
         super.onDestroyView();

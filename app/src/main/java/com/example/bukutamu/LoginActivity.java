@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.bukutamu.ui.dashboardadmin.DashboardAdminFragment;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.HashMap;
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                         super.onPostExecute(response);
                         loading.dismiss();
                         if (response.equals("Proceed")) {
-                            Intent intent = new Intent(LoginActivity.this, LihatDataTamu.class);
+                            Intent intent = new Intent(LoginActivity.this, DashboardAdminFragment.class);
                             intent.putExtra("username", username.getText().toString());
                             intent.putExtra("password", password.getText().toString());
                             startActivity(intent);

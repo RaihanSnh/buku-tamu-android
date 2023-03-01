@@ -1,12 +1,11 @@
-package com.example.bukutamu.ui.dashboard;
+package com.example.bukutamu.ui.dashboardadmin;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,31 +14,33 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.bukutamu.R;
 import com.example.bukutamu.databinding.FragmentDashboardBinding;
+import com.example.bukutamu.ui.dashboard.DashboardViewModel;
+import com.example.bukutamu.ui.listtamu.ListTamuFragment;
 import com.example.bukutamu.ui.tamu.TamuFragment;
 
+public class DashboardAdminFragment extends Fragment {
 
-public class DashboardFragment extends Fragment {
-
-    ImageView arrow;
+    Button view;
 
     private FragmentDashboardBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel DashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        DashboardAdminViewModel DashboardAdminViewModel =
+                new ViewModelProvider(this).get(DashboardAdminViewModel.class);
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        arrow = root.findViewById(R.id.image_arrow);
+        view = root.findViewById(R.id.view_listtamu);
 
-        arrow.setOnClickListener(new View.OnClickListener() {
+        view.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                Fragment tamuFragment = new TamuFragment();
+                TamuFragment listtamuFragment = new TamuFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.nav_host_fragment_content_main, tamuFragment);
+                transaction.replace(R.id.nav_host_fragment_content_main, listtamuFragment);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }

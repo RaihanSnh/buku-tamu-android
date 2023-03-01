@@ -1,20 +1,22 @@
-package com.syahrul.bukutamu;
+package com.example.bukutamu.ui.listtamu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.example.bukutamu.Konfigurasi;
+import com.example.bukutamu.MainActivity;
+import com.example.bukutamu.R;
+import com.example.bukutamu.RequestHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,7 +25,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ListTamuFragment extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView;
 
@@ -35,7 +37,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.fragment_listtamu);
 
         Intent intent = getIntent();
         id = intent.getStringExtra(Konfigurasi.TAG_ID);
@@ -67,15 +69,15 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
                 String id = jo.getString(Konfigurasi.TAG_ID);
                 String nama = jo.getString(Konfigurasi.TAG_NAMA);
                 String alamat = jo.getString(Konfigurasi.TAG_ALAMAT);
-                String petugas = jo.getString(Konfigurasi.TAG_PETUGAS);
-                String keterangan = jo.getString(Konfigurasi.TAG_KETERANGAN);
+                String hp = jo.getString(Konfigurasi.TAG_HP);
+                String keperluan = jo.getString(Konfigurasi.TAG_KEPERLUAN);
                 String lainnya = jo.getString(Konfigurasi.TAG_LAINNYA);
                 HashMap<String, String> data = new HashMap<>();
                 data.put(Konfigurasi.TAG_ID, id);
                 data.put(Konfigurasi.TAG_NAMA, nama);
                 data.put(Konfigurasi.TAG_ALAMAT, alamat);
-                data.put(Konfigurasi.TAG_PETUGAS, petugas);
-                data.put(Konfigurasi.TAG_KETERANGAN, keterangan);
+                data.put(Konfigurasi.TAG_HP, hp);
+                data.put(Konfigurasi.TAG_KEPERLUAN, keperluan);
                 data.put(Konfigurasi.TAG_LAINNYA, lainnya);
                 list.add(data);
             }
@@ -85,20 +87,20 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                ListActivity.this, list, R.layout.card,
+                ListTamuFragment.this, list, R.layout.card,
                 new String[]{
                         Konfigurasi.TAG_ID,
                         Konfigurasi.TAG_NAMA,
                         Konfigurasi.TAG_ALAMAT,
-                        Konfigurasi.TAG_PETUGAS,
-                        Konfigurasi.TAG_KETERANGAN,
+                        Konfigurasi.TAG_HP,
+                        Konfigurasi.TAG_KEPERLUAN,
                         lainnya(Konfigurasi.TAG_LAINNYA)},
                 new int[]{
                         R.id.id,
                         R.id.nama,
                         R.id.alamat,
-                        R.id.petugas,
-                        R.id.keterangan,
+                        R.id.hp,
+                        R.id.keperluan,
                         R.id.lainnya});
         listView.setAdapter(adapter);
     }
@@ -111,7 +113,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ListActivity.this, "Mengambil Data", "Mohon Tunggu...", false, false);
+                loading = ProgressDialog.show(ListTamuFragment.this, "Mengambil Data", "Mohon Tunggu...", false, false);
             }
 
             @Override
@@ -125,7 +127,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(Konfigurasi.URL_GET_DATA);
+                String s = rh.sendGetRequest(Konfigurasi.URL_GET_TAMU);
                 return s;
             }
 
@@ -136,13 +138,13 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
     //@Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(this, EditActivity.class);
+        Intent intent = new Intent(this, ListTamuFragment.class);
         HashMap <String, String> map = (HashMap) parent.getItemAtPosition(position);
 //        String id = map.get(Konfigurasi.TAG_ID).toString();
         intent.putExtra(Konfigurasi.KEY_NAMA, id);
         intent.putExtra(Konfigurasi.KEY_ALAMAT, id);
-        intent.putExtra(Konfigurasi.KEY_PETUGAS, id);
-        intent.putExtra(Konfigurasi.KEY_KETERANGAN, id);
+        intent.putExtra(Konfigurasi.KEY_HP, id);
+        intent.putExtra(Konfigurasi.KEY_KEPERLUAN, id);
         intent.putExtra(Konfigurasi.KEY_LAINNYA, id);
         startActivity(intent);
         finish();
@@ -161,14 +163,14 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(ListActivity.this, "Updating...", "Tunggu...", false, false);
+                loading = ProgressDialog.show(ListTamuFragment.this, "Updating...", "Tunggu...", false, false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                Toast.makeText(ListActivity.this, s, Toast.LENGTH_LONG).show();
+                Toast.makeText(ListTamuFragment.this, s, Toast.LENGTH_LONG).show();
             }
 
             @Override

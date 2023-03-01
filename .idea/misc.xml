@@ -9,6 +9,7 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/gelombang_header.xml" value="0.1935" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1975" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/ic_baseline_admin_panel_settings_24.xml" value="0.1965" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/ic_baseline_arrow_circle_right_24.xml" value="0.196" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/ic_baseline_arrow_forward_24.xml" value="0.1965" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/ic_baseline_dashboard_24.xml" value="0.1965" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/ic_baseline_handshake_24.xml" value="0.1965" />
@@ -25,24 +26,33 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/side_nav_bar.xml" value="0.121" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/sp_rectangle_login.xml" value="0.1935" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/drawable/sp_rectangle_root.xml" value="0.1965" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/activity_edit.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/activity_lihat_data_suhu.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/activity_main2.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/activity_register.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/app_bar_main2.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/card.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/content_main.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/content_main2.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_admin.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_dashboard.xml" value="0.264" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_dashboardadmin.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_gallery.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_lihat_data_tamu.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_list.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_listtamu.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_logout.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_slideshow.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/fragment_tamu.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/list_item.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/nav_header_main.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/layout/nav_header_main2.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/menu/activity_main_drawer2.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/menu/main.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.194" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/BukuTamu/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.194" />

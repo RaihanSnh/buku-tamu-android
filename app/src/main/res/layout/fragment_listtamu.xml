@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.tamu.TamuFragment"
-    android:padding="25dp"
+    tools:context=".ui.listtamu.ListTamuFragment"
+    android:padding="15dp"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
-        android:layout_margin="2dp">
+        app:cardCornerRadius="6dp"
+        android:layout_margin="3dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="14dp"
-            android:background="#0F64BD">
+            android:padding="8dp"
+            android:background="@color/blue">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Form Tamu"
-                android:fontFamily="sans-serif-black"
-                android:textSize="24dp"
-                android:textColor="#FFF"/>
+                android:text="List Tamu"
+                android:layout_marginLeft="125dp"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

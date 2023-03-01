@@ -66,6 +66,7 @@
             android:backgroundTint="#FFF"
             android:layout_below="@id/v_saparator"
             android:hint="********"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:textColorHint="@color/blue"/>

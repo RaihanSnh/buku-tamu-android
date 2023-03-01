@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_dashboardadmin"
+            android:icon="@drawable/ic_baseline_dashboard_24"
+            android:title="Dashboard" />
+        <item
+            android:id="@+id/nav_listtamu"
+            android:icon="@drawable/ic_baseline_groups_24"
+            android:title="List Tamu" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="Logout" />
+    </group>
+</menu>
